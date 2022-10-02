@@ -7,40 +7,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Numa aleatorico</title>
     <script src="script/funciones.js"></script>
+    <Link rel="stylesheet" type="text/css" href="style/style.css">
+        <Link rel="stylesheet" type="text/css" href="style/toggle.css">
+    </Link>
 </head>
 
 <body>
-
+    <h2>Generador de números aleatorios</h2>
     <div class="formulario">
 
 
-        <form>
-            <label class="etiqueta1">Numero minimo</label>
-            <input type="number" id="num1" name="num1" required minlength="4" maxlength="8" size="10"
-                placeholder="Ingresa un numero">
+        <form class="formulario">
+            <div class="fila">
+                <label class="etiqueta1">Número mínimo</label>
+                <input type="number" id="num1" name="num1" required minlength="4" maxlength="8" size="10"
+                   class="input">
+            </div>
             <br>
-            <label class="etiqueta1">Numero maximo</label>
+            <div class="fila">
+                <label class="etiqueta1">Número máximo</label>
 
-            <input type="number" id="num2" name="num2" required minlength="4" maxlength="8" size="10"
-                placeholder="Ingresa un numero">
+                <input type="number" id="num2" name="num2" required minlength="4" maxlength="8" size="10"
+                    oninput="cambioNumMax()" class="input">
+            </div>
             <br>
-            <label class="etiqueta1">cantdad</label>
 
-            <input type="number" id="num3" name="num3" required minlength="4" maxlength="8" size="10"
-                placeholder="Cantidad">
+            <div class="fila">
+                <label class="etiqueta1">Cantidad</label>
+
+                <input type="number" id="num3" name="num3" required minlength="4" maxlength="8" size="10"
+                     max="1000" oninput="cambioCantidad()" class="input">
+                     <!-- placeholder="Cantidad" -->
+
+            </div>
             <br>
-            <label><input type="checkbox" id="cbox1" value="first_checkbox">
-                Numeros repetidos</label><br>
+           <!-- <label><input type="checkbox" id="cbox1" value="first_checkbox" onclick="vaidarNumUnicos()">
+                Numeros unicos</label><br>
+            -->
 
-            <input type="button" onclick="numAleatorico()" value="Generar Numeros">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="cbox1" class="custom-checkbox">
+                    <span class="custom-checkbox-span" tabindex="0"></span>
+                    <label for="custom-checkbox" class="etiqueta1">  Números únicos</label>
+                </div>
+               
+            <input type="button" onclick="numAleatorico()" value="Generar números " class="button">
 
+
+          
         </form>
+
     </div>
 
 
 
 
-    <h2 id='result'>result</h2>
+    <div class='result' id="result"  style="display: none">
+
+
+    </div>
+    
 </body>
 
 </html>

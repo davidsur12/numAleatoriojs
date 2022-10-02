@@ -1,0 +1,159 @@
+body {
+
+    background-color: #6C3483;
+
+    background-image: radial-gradient(circle at 5.5% 103.04%, #ffa4ea 0, #ff96e9 16.67%, #f884e3 33.33%, #d86cd8 50%, #b556ce 66.67%, #9449c8 83.33%, #7444c7 100%);
+}
+
+h2 {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+    text-align: center;
+}
+
+.formulario {
+
+    background-color: #fff;
+    width: 100%;
+    max-width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    padding: 30px 0px 30px 0px;
+    border-radius: 10px;
+
+    /*
+  justify-content: center;
+  align-items: center;*/
+
+}
+
+.input {
+
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    max-width: 120px;
+    min-width: 56px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding: 0;
+    height: 40px;
+
+    background-color: #fff;
+    color: #000;
+}
+
+.formulario .fila input {
+
+
+    float: right;
+}
+
+.formulario .fila label {
+
+    color: #212F3C;
+    float: left;
+}
+
+.etiqueta1 {
+
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.button {
+
+    background-color: #E703D6;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 20px 0px 20px 0px;
+
+
+
+}
+
+@media screen and (max-width: 770px) {
+    body {
+
+        background-color: #fff;
+    }
+
+    .formulario {
+
+        background-color: #fff;
+        width: 100%;
+        max-width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+
+        /*
+      justify-content: center;
+      align-items: center;*/
+
+    }
+}
+
+.result {
+
+    background-color: #fff;
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0px 30px 0px;
+    border-radius: 10px;
+
+}
+
+h1 {}
+
+.num {
+
+    color: #000;
+    border-radius: 9px;
+    border-style: groove;
+    border-color: #E703D6;
+    text-align: center;
+    padding: 15px;
+    margin: 5px 30px 5px 30x;
+    margin-right: 30px;
+    margin-bottom: 15px;
+   
+    
+    position:relative; 
+    
+
+}
+
+.pos{
+
+    
+  position: absolute;
+ 
+  bottom: -19px;
+  text-align: center;
+  left: 0px;
+  border-radius: 2px;
+
+
+  color: #fff;
+  text-align: center;
+  background-color: #b556ce;
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  
+
+}
