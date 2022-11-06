@@ -8,20 +8,25 @@
     <title>Numa aleatorico</title>
     <script src="script/funciones.js"></script>
     <Link rel="stylesheet" type="text/css" href="style/style.css">
-        <Link rel="stylesheet" type="text/css" href="style/toggle.css">
+    <Link rel="stylesheet" type="text/css" href="style/toggle.css">
     </Link>
+
+    <script src="script/alert/sweetalert2.min.js"></script>
+    <Link rel="stylesheet" href="script/alert/sweetalert2.css">
+    </Link>
+
+
 </head>
 
 <body>
-    <h2>Generador de números aleatorios</h2>
+    <h2>Generador de Números Aleatorios</h2>
     <div class="formulario">
 
 
         <form class="formulario">
             <div class="fila">
                 <label class="etiqueta1">Número mínimo</label>
-                <input type="number" id="num1" name="num1" required minlength="4" maxlength="8" size="10"
-                   class="input">
+                <input type="number" id="num1" name="num1" required minlength="4" maxlength="8" size="10" class="input">
             </div>
             <br>
             <div class="fila">
@@ -35,38 +40,42 @@
             <div class="fila">
                 <label class="etiqueta1">Cantidad</label>
 
-                <input type="number" id="num3" name="num3" required minlength="4" maxlength="8" size="10"
-                     max="1000" oninput="cambioCantidad()" class="input">
-                     <!-- placeholder="Cantidad" -->
+                <input type="number" id="num3" name="num3" required minlength="4" maxlength="8" size="10" max="1000"
+                    oninput="cambioCantidad()" class="input">
+                <!-- placeholder="Cantidad" -->
 
             </div>
             <br>
-           <!-- <label><input type="checkbox" id="cbox1" value="first_checkbox" onclick="vaidarNumUnicos()">
+            <!-- <label><input type="checkbox" id="cbox1" value="first_checkbox" onclick="vaidarNumUnicos()">
                 Numeros unicos</label><br>
             -->
 
-                <div class="checkbox-group">
-                    <input type="checkbox" id="cbox1" class="custom-checkbox">
-                    <span class="custom-checkbox-span" tabindex="0"></span>
-                    <label for="custom-checkbox" class="etiqueta1">  Números únicos</label>
-                </div>
-               
+            <div class="checkbox-group">
+                <input type="checkbox" id="cbox1" class="custom-checkbox">
+                <span class="custom-checkbox-span" tabindex="0"></span>
+                <label for="custom-checkbox" class="etiqueta1"> Números únicos</label>
+            </div>
+
             <input type="button" onclick="numAleatorico()" value="Generar números " class="button">
 
 
-          
+
         </form>
 
     </div>
 
 
-
-
-    <div class='result' id="result"  style="display: none">
-
+    <div class='n' id="n" style="display: none" >
+        <h2>Números Generados </h2>
+        
 
     </div>
-    
+
+    <div class='result' id="result" style="display: none">
+        
+
+    </div>
+
 </body>
 
 </html>

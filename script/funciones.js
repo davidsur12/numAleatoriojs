@@ -156,13 +156,28 @@ function numAleatorico() {
             } else {
 
 
-                alert("la cantidad debe ser mayor a 0");
+              //  alert("la cantidad debe ser mayor a 0");
+
+                Swal.fire({
+                    title: 'la cantidad debe ser mayor a 0',
+                 
+                    icon: 'info',
+                    confirmButtonText: 'OK'
+                  })
             }
 
 
 
         } else {
-            alert("el numero minimo no puede superara el numero maximo");
+           // alert("el numero minimo no puede superara el numero maximo");
+            Swal.fire({
+                title: 'el numero minimo no puede superara el numero maximo',
+             
+                icon: 'info',
+                confirmButtonText: 'OK'
+              })
+
+
         }
     }
 
@@ -177,7 +192,7 @@ function numAleatorico() {
 
 function numAleatorico2() {
 
-    alert("I am an alert box!");
+   // alert("I am an alert box!");
 
 }
 
@@ -188,27 +203,47 @@ function resetStyle() {
 
 
 function validar() {
+
+    //en este apartado se valida que los campos esten llenos y que no superen los valores correspondentes
+    //en caso de los no ser asi se procedera a pedir al usuario que llene todos los campos
     var min = (document.getElementById("num1").value);
     var max = (document.getElementById("num2").value);
     var cantidad = (document.getElementById("num3").value);
+    var checkbox = document.getElementById('cbox1');
 
     if (min.length > 0 && max.length > 0 && cantidad.length > 0) {
+        //osea que ingreso los valores procedo a obtener los valores
         min = parseInt(document.getElementById("num1").value);
         max = parseInt(document.getElementById("num2").value);
         cantidad = parseInt(document.getElementById("num3").value);
-
+        checkbox=document.getElementById("cbox1").value;
+      
         //document.getElementById("result").innerHTML = "los campos estan llenos";
 
-        if (cantidad > (max - min)) {
+        if (cantidad > (max - min)  && checkbox==true) {
             document.getElementById("num3").value = (max - min + 1);
 
         }
         if (max > 1000000) {
-            alert("el maximo puede ser de 1000000");
+           // alert("el maximo puede ser de 1000000");
+
+           Swal.fire({
+            title: 'el numero maximo no puede ser mayor a 1000000',
+         
+            icon: 'info',
+            confirmButtonText: 'OK'
+          })
+
             return false;
         }
         if (cantidad > 1000) {
-            alert("la cantidad  puede ser de 1000");
+           // alert("la cantidad  puede ser de 1000");
+           Swal.fire({
+            title: 'la cantidad de numeros generados no pueden ser mas de 1000',
+         
+            icon: 'info',
+            confirmButtonText: 'OK'
+          })
             return false;
         }
 
@@ -217,7 +252,14 @@ function validar() {
     }
     else {
         //document.getElementById("result").innerHTML = "algunos de los campos estan vacios";
-        alert("ingresa todos los valores");
+       // alert("ingresa todos los valores");
+       Swal.fire({
+        title: 'Ingresa todos los valores',
+     
+        icon: 'info',
+        confirmButtonText: 'OK'
+      })
+
         return false;
 
     }
@@ -239,12 +281,18 @@ function numMinMax(min, max) {
 }
 
 function generarNumeros(min, max, cantidad, numunicos) {
+
+
+    /*
+    funcion que se encarga de generar una lista con los numeros aleatorios */
+    
+    
     var lista = [];
     if (cantidad == 1) {
+//si la cnatidad deseada es 1 solo se devuelve una lista con un elemento
 
-
-        document.getElementById("result").innerHTML = parseInt(Math.random() * (max - min) + min);
-
+      //  document.getElementById("result").innerHTML = parseInt(Math.random() * (max - min) + min);
+        lista.push(parseInt(Math.random() * (max - min) + min));
     }
     else {
 
@@ -258,17 +306,25 @@ function generarNumeros(min, max, cantidad, numunicos) {
             //esta opcion se valida cuando la cantida no es mayor o es igual a la resta de max-min tal cual
 
             if (cantidad <= ((max - min))) {
-                alert("numeros unicos sin cambios cantidad" + cantidad + "  total numeros a generar " + ((max - min)));
+             
+
+                //alert("numeros unicos sin cambios cantidad" + cantidad + "  total numeros a generar " + ((max - min)));
                 //los numeros a generar seran iguales o menores aal numero max
-                alert("numeros unicos con cambios cantidad " + cantidad + " minimo " + min + " maximo " + max);
+                //alert("numeros unicos con cambios cantidad " + cantidad + " minimo " + min + " maximo " + max);
                 return numUnicos(min, max, cantidad, lista);//me retorna la lista con numeros unicos
 
             }
             else {
                 cantidad = (max - min);
-
-                alert("numeros unicos con cambios " + cantidad + " minimo " + min + " maximo " + max);
-
+                document.getElementById("num3").value = cantidad;
+               // alert("numeros unicos con cambios " + cantidad + " minimo " + min + " maximo " + max);
+               
+               Swal.fire({
+                title: 'La cantidad de números a obtener no puede ser mayor al numero máximo ',
+             
+                icon: 'info',
+                confirmButtonText: 'OK'
+              })
 
                 return numUnicos(min, max, cantidad, lista);
 
@@ -337,18 +393,48 @@ function numUnicos(min, max, cantidad, lista) {
     return lista;
 }
 
-
+var cont=0;
 function addEtiqueta(min, max, cantidad, estado) {
 /*
+esta funcion se encarga de llamar a las funciones y mstarr el resultado
 se debe borrar los numeros generados anteriormente para infresa los nuevos se puede buscar informacion
 //como Nodo.removeChild()
 
+  if(cont>0){
     var d = document.getElementById("result");
     var d_nested = document.getElementById("num");
     var throwawayNode = d.removeChild(d_nested);
+
+   
+}
+
+existe un error que al generar los numeros por primera vez con numeros no repetidos al 
+volver a precionar el boton  la cantidad se cambia a lo maximo que se puede generar
+const titulo = document.createElement("h2");
+  titulo.classList.add("result");
+  titulo.textContent = "Numeros generados \n";
+  document.querySelector("body").appendChild(titulo);
 */
 
-    div = document.getElementById('result');
+
+
+  div = document.getElementById('n');
+  div.style.display = '';
+
+document.getElementById("result").innerHTML="";
+//document.getElementById("numobtenido").value = "Numeros generados";
+//document.getElementById('numobtenido').innerHTML= 'Numeros generados';
+
+
+  
+
+  const salto = document.createElement("br");
+  salto.classList.add("result");
+  document.querySelector(".result").appendChild(salto);
+
+
+   cont++;
+   div = document.getElementById('result');
     div.style.display = '';
 
 
@@ -363,6 +449,7 @@ se debe borrar los numeros generados anteriormente para infresa los nuevos se pu
         h1.innerHTML = lista[i];//num
         h3.classList.add("pos");
         border.classList.add("num");
+        border.setAttribute("id","border");
         border.appendChild(h1);
         border.appendChild(h3);
         capa.appendChild(border);
